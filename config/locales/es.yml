@@ -6,6 +6,7 @@ es:
   activerecord:
     errors:
       messages:
+        record_invalid: 'Registro Invalido'
       models:
         item:
           attributes:

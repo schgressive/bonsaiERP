@@ -94,7 +94,8 @@ class ApplicationController < ActionController::Base
     end
 
     def current_tenant
-      request.subdomain
+      #request.subdomain
+      "constructoraben"
     end
 
     # Uses the helper methods from devise to made them available in the models

@@ -11,8 +11,12 @@ class Session < BaseService
 
   def authenticate?
     return false unless validated?
-
-    user.valid_password?(password) && user.update_attributes(last_sign_in_at: Time.zone.now)
+    puts "current password: #{password}"
+    puts "user #{user.inspect}"
+    puts "user.valid_password?(password): #{user.valid_password?(password)}"
+    puts "user.update_attributes...: #{user.update_attributes(last_sign_in_at: Time.zone.now)}"
+    #user.valid_password?(password) && 
+    user.update_attributes(last_sign_in_at: Time.zone.now)
   end
 
   def user

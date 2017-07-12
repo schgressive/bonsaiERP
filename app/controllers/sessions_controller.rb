@@ -12,6 +12,8 @@ class SessionsController < ApplicationController
   end
 
   def create
+    puts "Session pamrams"
+    puts session_params.inspect
     @session = Session.new(session_params)
 
     case

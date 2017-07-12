@@ -33,7 +33,7 @@ class Organisation < ActiveRecord::Base
   ########################################
   # Validations
   validates_presence_of   :name, :tenant
-  validates :tenant, uniqueness: true, format: { with: /\A[a-z0-9]+\z/ }, length: { in: 3...15 }
+  validates :tenant, uniqueness: true, format: { with: /\A[a-z0-9]+\z/ }, length: { in: 3...25 }
 
   validate :valid_tenant_not_in_list
   validate :valid_header_css
@@ -143,7 +143,7 @@ class Organisation < ActiveRecord::Base
       if new_record?
         t_name = name.to_s.downcase.gsub(/[^A-Za-z]/, '')[0...15]
         self.tenant = t_name
-        self.tenant = "#{t_name[0...10]}#{tenant_pad(5)}"  if Organisation.where(tenant: tenant).any?
+        self.tenant = "#{t_name[0...10]}#{tenant_pad(5)}" if Organisation.where(tenant: tenant).any?
       end
     end
 

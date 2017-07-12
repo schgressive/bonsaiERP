@@ -32,6 +32,8 @@ gem 'responders' # TODO check if this gem is used
 
 gem "rack-cors", require: "rack/cors"
 
+gem 'pg'
+
 group :production do
   gem 'newrelic_rpm'
   gem 'bugsnag' # Report of errors
